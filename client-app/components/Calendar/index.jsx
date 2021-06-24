@@ -15,9 +15,11 @@ const Calendar = (props) => {
   const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   const [startDay, setStartDay] = useState(0);
+  const [daysInMonth, setDaysInMonth] = useState(31);
 
   useEffect(() => {
     setStartDay(new Date(year + '-' + month + '-01').getDay() + 1);
+    setDaysInMonth(new Date(year, month, 0).getDate());
   }, [month, year]);
 
   return (
@@ -28,7 +30,7 @@ const Calendar = (props) => {
         </ul>
         <ul className={`${className}__body--dates`}>
           {Array.from(Array(startDay), (_, i) => <li key={i}></li>)}
-          {Array(days).fill().map((_, index) => <li className={activeDays.includes(index + 1) ? 'active' : ''} key={index}>{index + 1}</li>)}
+          {Array(daysInMonth).fill().map((_, index) => <li className={activeDays.includes(index + 1) ? 'active' : ''} key={index}>{index + 1}</li>)}
         </ul>
       </section>
     </main>
