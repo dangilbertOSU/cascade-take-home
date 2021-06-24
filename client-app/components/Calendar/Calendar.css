@@ -1,0 +1,81 @@
+.calendar {
+  background: #ffffff;
+  font-size: 10px;
+  width: 90%;
+  max-width: 40rem;
+  min-height: 27rem;
+  margin: 5rem auto;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 8rem auto 10rem;
+  box-shadow: 0 1rem 2.5rem rgb(27, 64, 94);
+}
+
+.calendar__body {
+  padding: 1.5rem 2rem;
+}
+
+.calendar__body ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.calendar__body--days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.calendar__body--days li {
+  flex: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #7D8994;
+  margin: 0 1px;
+}
+
+.calendar__body--dates {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+  
+.calendar__body--dates li {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  position: relative;
+}
+
+.calendar__body--dates li.prev,
+.calendar__body--dates li.next {
+  color: #cccccc;
+}
+
+.calendar__body--dates li.active {
+  background: #86B1F2;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.calendar__body--dates li.circle {
+  border: 2px solid;
+  border-radius: 50%;
+}
+
+.calendar__body span {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  border-radius: 50%;
+}

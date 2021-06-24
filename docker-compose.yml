@@ -1,0 +1,52 @@
+version: "3.7"
+services:
+  api:
+    build: .
+    image: cascade-weather-api
+    restart: always
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
+    environment:
+      MYSQL_DATABASE: "cascade_weather"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "cascaderocks"
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db-init/:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "cascade_weather"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "cascaderocks"
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.0.1
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: "admin"
+      PMA_PASSWORD: "cascaderocks"
+    ports:
+      - "8080:80"
+
+  client:
+    build:
+      context: ./client-app
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - "1234:1234"
+    volumes:
+      - ./client-app:/app
+      - /app/node_modules
+
+volumes:
+  mysql-data:

@@ -1,0 +1,25 @@
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import './Component.css';
+
+const Component = (props) => {
+  const {
+    className,
+  } = props;
+
+  return (
+    <div className={className}>
+    </div>
+  );
+};
+
+Component.defaultProps = {
+  className: 'className',
+};
+
+Component.propTypes = {
+  className: PropTypes.string,
+};
+
+export default Component;

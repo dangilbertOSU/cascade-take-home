@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir -p components/$1
+cd components/$1
+sed s/Component/$1/g ../../component-skelton.txt > index.jsx
+touch $1.css
+
+exit 0

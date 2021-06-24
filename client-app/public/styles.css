@@ -1,0 +1,11 @@
+body {
+  color: #636363;
+  font-family: 'Roboto', sans-serif;
+}
+
+#app {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}

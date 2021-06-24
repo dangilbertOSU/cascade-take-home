@@ -1,0 +1,30 @@
+{
+  "name": "cascade-energy-dannon",
+  "version": "1.0.0",
+  "description": "My submission for the take home assignment.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangilbertOSU/cascade-take-home.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "javascript"
+  ],
+  "author": "Dannon Gilbert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dangilbertOSU/cascade-take-home/issues"
+  },
+  "homepage": "https://github.com/dangilbertOSU/cascade-take-home#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5"
+  }
+}
